@@ -1,0 +1,69 @@
+<form [formGroup]="signup" (ngSubmit)="onsignup()">
+
+<div class="box">
+  <div class="container">
+    <div>
+      <img
+        src="../../../assets/book1.png"
+        alt=""
+        width="245px"
+        height="245px"
+        style="border-radius: 50%"
+      />
+    </div>
+    <div class="para">
+      <p style="margin-left: 25px;">ONLINE BOOK SHOPPING</p>
+    </div>
+  </div>
+
+  <div class="container1">
+    <div style="display: flex; justify-content: space-around">
+      <div>
+        <a routerLink="/login"
+          ><h1 style="margin-top: 10px; font-weight: 500">LOGIN</h1></a
+        >
+      </div>
+      <div>
+        <a routerLink="/signin">
+          <h1 style="margin-top: 10px; font-weight: 500; color: grey">
+            SIGNUP
+          </h1></a
+        >
+      </div>
+    </div>
+    <div class="Input">
+      <p>
+        <span class="heading1">Full Name</span>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="fullName" type="text" />
+        </mat-form-field>
+      </p>
+    </div>
+    <div class="Input">
+      <span class="heading1">Email id</span>
+      <mat-form-field appearance="outline">
+        <mat-label></mat-label>
+        <input matInput formControlName="email" type="email" />
+      </mat-form-field>
+    </div>
+    <div class="Input">
+      <span class="heading1">Password</span>
+      <mat-form-field appearance="outline">
+        <mat-label></mat-label>
+        <input matInput formControlName="password" type="password" />
+      </mat-form-field>
+    </div>
+    <div class="Input">
+      <span class="heading1">Mobile Number </span>
+      <mat-form-field appearance="outline">
+        <mat-label></mat-label>
+        <input matInput formControlName="phone" type="number" />
+      </mat-form-field>
+    </div>
+
+    <div id="loginbtn">
+      <button>Signup</button>
+    </div>
+  </div>
+</div>
+</form>
