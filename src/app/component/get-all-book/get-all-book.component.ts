@@ -19,6 +19,7 @@ export class GetAllBookComponent implements OnInit {
       console.log('Book Api is calling ', responce);
       this.bookArray = responce.result;
       console.log('data', this.bookArray);
+      
     });
   }
 }

@@ -17,6 +17,8 @@ import {  HttpClientModule } from '@angular/common/http';
 import { GetAllBookComponent } from './component/get-all-book/get-all-book.component';
 import { DisplayBookComponent } from './component/display-book/display-book.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -45,7 +47,8 @@ import {MatCardModule} from '@angular/material/card';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
 
   ],
   providers: [],

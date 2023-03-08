@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/Service/UserService/user.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private snackbar:MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -40,6 +42,10 @@ export class SignupComponent implements OnInit {
       this.userService.signup(data).subscribe((response: any) => {
         return console.log('SignUp is Successfully', response);
       });
+      this.snackbar.open('SignUp is Sucessfully','',{
+        duration:3000,
+        verticalPosition:'bottom'
+      })
     }
   }
 }
