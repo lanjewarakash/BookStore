@@ -2,74 +2,60 @@ mat-toolbar {
   background-color: brown;
 }
 
-
 .book1 {
-    margin-left: 20px;
-    width: 220px;
+  margin-left: 20px;
+  width: 220px;
 
-    padding: 20px;
-    margin: 10px;
+  padding: 20px;
+  margin: 10px;
 }
-#logoimage{
-    margin-left: 12%;
+#logoimage {
+  margin-left: 12%;
 }
-#logoname{
-    color: white;
-    padding-right: 20px;
-    padding-left: 10px;
+#logoname {
+  color: white;
+  padding-right: 20px;
+  padding-left: 10px;
 }
-#img2{
-    color: white;
-
+#img2 {
+  color: white;
 }
-#search{
-    width: 40%;
-    padding: 7px;    
+#search {
+  width: 40%;
+  padding: 7px;
 }
-.material-symbols-outlined{
-    color: white;
-    // width: 70px;
-    padding: 15px;
-    // margin-right: 50px
+.material-symbols-outlined {
+  color: white;
+  padding: 15px;
 }
-button{
-    background-color: brown;
-    border: none;   
+button {
+  background-color: brown;
+  border: none;
 }
 
-
-input ::placeholder{
-    margin-left: 40px;
-
+input ::placeholder {
+  margin-left: 40px;
 }
 
-
-
-
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    margin: 10px;
-
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 10px;
 }
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-.img1{
-    border-color: white;
+.img1 {
+  border-color: white;
 }
-footer{
-    background: #2E1D1E 0% 0% no-repeat padding-box;
-opacity: 1;
+footer {
+  background: #2e1d1e 0% 0% no-repeat padding-box;
+  opacity: 1;
 }
-.footer{
-    color: white;
-    margin-left: 100px;
-    padding-top: 5px;
+.footer {
+  color: white;
+  margin-left: 100px;
+  padding-top: 5px;
 }
-
-// .book1{
-//     display: none;
-// }

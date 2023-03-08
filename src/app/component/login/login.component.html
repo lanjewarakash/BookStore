@@ -1,64 +1,70 @@
-<form [formGroup]="login" (ngSubmit)="onlogin()" >
+<form [formGroup]="login" (ngSubmit)="onlogin()">
   <div class="box">
-  <div class="container">
-    <div>
-      <img
-        src="../../../assets/book1.png"
-        alt=""
-        width="245px"
-        height="245px"
-        style="border-radius: 50%"
-      />
+    <div class="container">
+      <div>
+        <img
+          src="../../../assets/book1.png"
+          alt=""
+          width="245px"
+          height="245px"
+          style="border-radius: 50%"
+        />
+      </div>
+      <div class="para">
+        <p style="margin-left: 25px">ONLINE BOOK SHOPPING</p>
+      </div>
     </div>
-    <div class="para">
-      <p style="margin-left: 25px;">ONLINE BOOK SHOPPING</p>
-    </div>
-  </div>
 
-  <div class="container1">
-    <div style="display: flex; justify-content: space-around">
-      <div>
-        <a routerLink="/login"><h1 style="margin-top: 10px; font-weight: 500">LOGIN</h1></a>
+    <div class="container1">
+      <div style="display: flex; justify-content: space-around">
+        <div>
+          <a routerLink="/login"
+            ><h1 style="margin-top: 10px; font-weight: 500">LOGIN</h1></a
+          >
+        </div>
+        <div>
+          <a routerLink="/signin">
+            <h1 style="margin-top: 10px; font-weight: 500; color: grey">
+              SIGNUP
+            </h1></a
+          >
+        </div>
       </div>
-      <div>
-         <a routerLink="/signin" > <h1 style="margin-top: 10px; font-weight: 500; color: grey">SIGNUP</h1></a> 
+      <div class="Input">
+        <p>
+          <span class="heading1">Email ld</span>
+          <mat-form-field appearance="outline">
+            <input matInput type="email" formControlName="email" />
+          </mat-form-field>
+        </p>
       </div>
-    </div>
-    <div class="Input">
-      <p>
-        <span class="heading1">Email ld</span>
+      <div class="Input">
+        <span class="heading1">Password</span>
         <mat-form-field appearance="outline">
-          <input matInput type="email" formControlName="email"  />
+          <mat-label></mat-label>
+          <input matInput type="password" formControlName="password" />
         </mat-form-field>
-      </p>
-    </div>
-    <div class="Input">
-      <span class="heading1">Password</span>
-      <mat-form-field appearance="outline">
-        <mat-label></mat-label>
-        <input matInput type="password" formControlName="password" />
-      </mat-form-field>
-    </div>
-
-    <div id="loginbtn">
-      <button mat-raised-button>Login</button>
-    </div>
-    <div>
-      <h3 style="text-align: center  ; line-height: 40px;"  >----------------OR----------------</h3>
-    </div>
-
-    <div class="buttons">
-      <div class="Facebook">
-        <button  style="width: 100%" mat-flat-button color="primary">
-          Facebook
-        </button>
       </div>
-      <div class="Facebook">
-        <button style="width: 100%" mat-flat-button disabled>Google</button>
-        <!-- 
-        <button  style="width: 100%"  mat-flat-button color="primary">Google</button> -->
+
+      <div id="loginbtn">
+        <button mat-raised-button>Login</button>
+      </div>
+      <div>
+        <h3 style="text-align: center; line-height: 40px">
+          ----------------OR----------------
+        </h3>
+      </div>
+
+      <div class="buttons">
+        <div class="Facebook">
+          <button style="width: 100%" mat-flat-button color="primary">
+            Facebook
+          </button>
+        </div>
+        <div class="Facebook">
+          <button style="width: 100%" mat-flat-button disabled>Google</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </form>
