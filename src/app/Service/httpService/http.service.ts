@@ -17,6 +17,11 @@ export class HttpService {
     );
   }
 
+  GetService(url:string , token: boolean=true, httpOption:any ){
+    return this.httpClinet.get(this.BaseUrl+url , token && httpOption)
+  }
+  
+
 
 
 

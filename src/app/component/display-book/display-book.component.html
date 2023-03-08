@@ -1,0 +1,41 @@
+<h1>Books</h1>
+<div class="container">
+  <div class="box1" *ngFor="let book of childArray">
+    <mat-card-header>
+      <div class="image">
+        <img src="../../../assets/Image 11@2x.png" alt="" />
+      </div>
+
+      <p>
+        <mat-card-title>{{ book.bookName }}</mat-card-title>
+      </p>
+
+      <p>
+        <mat-card-subtitle> By {{ book.author }}</mat-card-subtitle>
+      </p>
+      <p><button style="background-color: green; color: white; border: none; font-weight: bold;" >4.5 <i id="star" class="material-symbols-outlined">
+        star
+        </i></button></p>
+      <h2>RS. {{ book.discountPrice }} <span id="discountPrice">{{book.price}}</span></h2> 
+    </mat-card-header>
+  </div>
+</div>
+
+<!-- <div class="display-books">
+    <mat-card class="book" *ngFor="let book of childArray">
+        <div class="book-image" >
+            <img [src]="book.bookImage" width="125px" height="170px">
+            <img src="../../../assets/Image 11@2x.png" width="125px" height="170px" >
+
+        </div>
+        <div class="book-details">
+            <h3 class="bookName">{{book.bookName}}</h3>
+            <p class="authorName"> by {{book.author}}</p>
+            <h4>{{book.price}}</h4>
+            <div class="rating-count">
+                <div class="rating">
+                    <span>{{book.bookRating}}</span>
+                    <img src="../../../assets/" width="12px">
+                </div>
+                <span class="reviewerCount">({{book.ratingCount}})</span>
+            </div> -->

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DisplayBookComponent } from './component/display-book/display-book.component';
+import { GetAllBookComponent } from './component/get-all-book/get-all-book.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
@@ -9,7 +11,9 @@ const routes: Routes = [
   { path: 'signin', component: SignupComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent ,
+    children:[{path: 'displaybook', component: GetAllBookComponent}]
+  },
 ];
 
 @NgModule({
