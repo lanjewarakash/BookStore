@@ -19,6 +19,7 @@ export class BookService {
       })
     }
     return this.httpservice.GetService('bookstore_user/get/book', false, httpOption)
+  
 
   }
 }

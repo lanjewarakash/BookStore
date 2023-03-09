@@ -18,6 +18,7 @@ import { GetAllBookComponent } from './component/get-all-book/get-all-book.compo
 import { DisplayBookComponent } from './component/display-book/display-book.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AuthguardService } from './Service/AuthguardService/authguard.service';
 
 
 
@@ -51,7 +52,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSnackBarModule
 
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

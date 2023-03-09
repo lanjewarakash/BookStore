@@ -5,13 +5,14 @@ import { GetAllBookComponent } from './component/get-all-book/get-all-book.compo
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
+import { AuthenticationGuard } from './authguard/authentication.guard';
 
 const routes: Routes = [
   {path : '' , redirectTo: '/login', pathMatch: 'full'},
   { path: 'signin', component: SignupComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'home', component: HomeComponent ,
+  { path: 'home', component: HomeComponent ,canActivate:[AuthenticationGuard],
     children:[{path: 'displaybook', component: GetAllBookComponent}]
   },
 ];
