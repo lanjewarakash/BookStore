@@ -64,24 +64,25 @@ button {
     width: 98%;
     display: flex;
     flex-direction: column;
-
   }
-  .containerOne{
+  .containerOne {
     margin: 0%;
     width: 20%;
     height: 20%;
-
   }
-  .containerTwo{
+  .containerTwo {
     width: 85%;
   }
-  textarea{
-    width: 300px;
+  textarea {
+    width: 330px;
   }
-  button{
-    width: 48%;
-  }
+
   .twoButton {
-  display: none;
+    display: flex;
+    justify-content: space-between;
+    width: 500%;
+  }
+  button {
+    margin-right: 0%;
   }
 }

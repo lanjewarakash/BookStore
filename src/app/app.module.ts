@@ -20,6 +20,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthguardService } from './Service/AuthguardService/authguard.service';
 import { QuickviewComponent } from './component/quickview/quickview.component';
+import { CartComponent } from './component/cart/cart.component';
 
 
 
@@ -37,6 +38,7 @@ import { QuickviewComponent } from './component/quickview/quickview.component';
     GetAllBookComponent,
     DisplayBookComponent,
     QuickviewComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

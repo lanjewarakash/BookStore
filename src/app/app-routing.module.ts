@@ -7,6 +7,7 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { AuthenticationGuard } from './authguard/authentication.guard';
 import { QuickviewComponent } from './component/quickview/quickview.component';
+import { CartComponent } from './component/cart/cart.component';
 
 const routes: Routes = [
   {path : '' , redirectTo: '/login', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
 
   { path: 'home', component: HomeComponent ,canActivate:[AuthenticationGuard],
     children:[{path: 'displaybook', component: GetAllBookComponent},
-    {path: 'quickview', component: QuickviewComponent}]
+    {path: 'quickview', component: QuickviewComponent},
+    {path: 'cart', component: CartComponent}]
   },
 ];
 
