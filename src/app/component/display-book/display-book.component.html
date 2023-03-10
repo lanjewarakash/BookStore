@@ -1,7 +1,7 @@
 <h1>Books</h1>
 <div class="container">
   <div class="box1" *ngFor="let book of childArray">
-    <div class="image">
+    <div class="image" (click)="onBookclick(book)" >
       <img src="../../../assets/Image 11@2x.png" alt="" />
     </div>
     <div class="content">
@@ -13,18 +13,19 @@
         By {{ book.author }}
       </h5>
       <p class="contentName">
-        <button
-          style="
-            background-color: green;
-            color: white;
-            border: none;
-            font-weight: bold;
-          "
-        >
+        <button id="starbutton">
+        
           4.5 <i id="star" class="material-symbols-outlined"> star </i>
         </button>
       </p>
       <p class="contentName">RS. {{ book.discountPrice }}</p>
+      <div class="twoButton">
+
+        <button id="addButton">ADD TO BAG</button>
+        <button id="wishButton"> <span  id="heart"  class="material-symbols-outlined">
+          favorite
+          </span> WISHLIST</button>
+      </div>
     </div>
   </div>
 </div>

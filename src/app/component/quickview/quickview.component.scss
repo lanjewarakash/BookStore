@@ -1,0 +1,87 @@
+.MainContainer {
+  display: flex;
+  width: 98%;
+  height: fit-content;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d1d1d1;
+  opacity: 1;
+}
+
+.containerOne {
+  width: 30%;
+  margin-left: 5%;
+}
+
+.containerTwo {
+  width: 61%;
+  padding-left: 20px;
+  height: fit-content;
+}
+.contentName {
+  padding: 0px 0px 0px 0px;
+  margin: 10px 0px 10px 0px;
+}
+img {
+  width: 310px;
+  border: 1px solid #d1d1d1;
+  padding: 30px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+}
+
+.twoButton {
+  display: flex;
+}
+
+button {
+  width: 48%;
+  margin: 3px;
+  padding: 3%;
+  color: white;
+  background-color: brown;
+  border: none;
+}
+#wishButton {
+  background-color: #333333;
+}
+#heart {
+  font-size: 17px;
+  color: white;
+}
+#starbutton {
+  background-color: green;
+  color: white;
+  border: none;
+  font-weight: bold;
+  width: 60px;
+  padding: 0px;
+}
+#star {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .MainContainer {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .containerOne{
+    margin: 0%;
+    width: 20%;
+    height: 20%;
+
+  }
+  .containerTwo{
+    width: 85%;
+  }
+  textarea{
+    width: 300px;
+  }
+  button{
+    width: 48%;
+  }
+  .twoButton {
+  display: none;
+  }
+}

@@ -19,6 +19,7 @@ import { DisplayBookComponent } from './component/display-book/display-book.comp
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthguardService } from './Service/AuthguardService/authguard.service';
+import { QuickviewComponent } from './component/quickview/quickview.component';
 
 
 
@@ -35,6 +36,7 @@ import { AuthguardService } from './Service/AuthguardService/authguard.service';
     HomeComponent,
     GetAllBookComponent,
     DisplayBookComponent,
+    QuickviewComponent,
   ],
   imports: [
     BrowserModule,
