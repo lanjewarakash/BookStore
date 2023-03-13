@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookService } from 'src/app/Service/bookService/book.service';
+import { CartService } from 'src/app/Service/cartService/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,6 +7,18 @@ import { BookService } from 'src/app/Service/bookService/book.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  constructor(private bookService: BookService) {}
-  ngOnInit() {}
+  constructor(private cartService: CartService) {}
+  cartBook: any = []
+  ngOnInit() {
+    this.getAllBook()
+  }
+
+  getAllBook(){
+   this.cartService.getAllBooks().subscribe((response:any )=>{
+    this.cartBook = response.result,
+    console.log('Get All Book API is Hit', response
+    );
+    
+   })
+  }
 }

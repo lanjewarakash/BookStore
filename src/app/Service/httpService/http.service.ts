@@ -12,7 +12,7 @@ export class HttpService {
 
   BaseUrl= 'https://bookstore.incubation.bridgelabz.com/' ;
 
-  PostService( url: string, reqData : IUserLogin | IUserSignUp, token: boolean=false , httpOption: any){
+  PostService( url: string, reqData : any, token: boolean=false , httpOption: any){
     return this.httpClinet.post(this.BaseUrl+url , reqData , token && httpOption
     );
   }

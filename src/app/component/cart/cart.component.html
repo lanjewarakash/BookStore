@@ -1,13 +1,13 @@
 <div>
   <h3 >home/My Cart</h3>
-  <div class="MainContainer">
-    <h2 style="margin: 10px 0px 20px 20px">My Cart(1)</h2>
+  <div class="MainContainer" *ngFor="let book of cartBook">
+    <h2 style="margin: 10px 0px 20px 20px">My Cart({{cartBook.length}})</h2>
     <img src="../../../assets/Image 11@2x.png" />
     <button class="placeOrder" type="submit">PLACE ORDER</button>
     <div class="content">
-      <h2>Don't Make Me Think</h2>
-      <h5>by Steve Krug</h5>
-      <h1>Rs. 1500</h1>
+      <h2>{{book.product_id.bookName}}</h2>
+      <h5>{{book.product_id.author}}</h5>
+      <h1>Rs. {{book.product_id.discountPrice}} <span id="price">Rs. {{book.product_id.price}}</span></h1>
     </div>
   </div>
   <div class="second">

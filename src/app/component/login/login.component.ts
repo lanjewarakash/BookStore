@@ -40,12 +40,12 @@ export class LoginComponent implements OnInit {
       this.userService.login(data).subscribe((response: any) => {
         console.log('Login is Sucessfully', response);
         localStorage.setItem('token', response.result.accessToken);
+        this.router.navigateByUrl('/home/displaybook');
       });
       this.snackbar.open('Login is Sucessfully', '', {
         duration: 3000,
         verticalPosition: 'bottom',
       });
-      this.router.navigateByUrl('/home/displaybook');
     }
   }
 }
