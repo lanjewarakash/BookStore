@@ -21,4 +21,16 @@ export class CartComponent implements OnInit {
     
    })
   }
+
+  deleteSingleBoOk(Book:any){
+    console.log(Book);
+    
+    this.cartService.deleteOneBook(Book).subscribe((response: any)=>{
+      console.log('delete api is hiting', response);
+      location.reload()
+      
+    })
+  }
+
+
 }

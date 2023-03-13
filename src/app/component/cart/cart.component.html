@@ -2,12 +2,17 @@
   <h3 >home/My Cart</h3>
   <div class="MainContainer" *ngFor="let book of cartBook">
     <h2 style="margin: 10px 0px 20px 20px">My Cart({{cartBook.length}})</h2>
+    <!-- <select id="map">
+      <option value="">Use Current Location</option>
+    </select> -->
     <img src="../../../assets/Image 11@2x.png" />
     <button class="placeOrder" type="submit">PLACE ORDER</button>
     <div class="content">
       <h2>{{book.product_id.bookName}}</h2>
       <h5>{{book.product_id.author}}</h5>
       <h1>Rs. {{book.product_id.discountPrice}} <span id="price">Rs. {{book.product_id.price}}</span></h1>
+      <button (click)="deleteSingleBoOk(book)" id="removeBook">Remove</button>
+      
     </div>
   </div>
   <div class="second">

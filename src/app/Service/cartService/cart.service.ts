@@ -9,9 +9,22 @@ export class CartService {
   token: any;
 
   constructor(private httpService: HttpService) {
-    this.token = localStorage.getItem('token')
+    this.token = localStorage.getItem('token');
   }
 
+  getAllBooks() {
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      }),
+    };
+    return this.httpService.GetService(
+      'bookstore_user/get_cart_items',
+      true,
+      httpOption
+    );
+  }
   addcart(reqData: any) {
     let httpOption = {
       headers: new HttpHeaders({
@@ -19,21 +32,25 @@ export class CartService {
         'x-access-token': this.token,
       }),
     };
-    
+
     return this.httpService.PostService(
-      'bookstore_user/add_cart_item/' + reqData.bookid, {}, true,
+      `bookstore_user/add_cart_item/${reqData.bookid}`,
+      reqData,
+      true,
       httpOption
     );
   }
-
-  getAllBooks(){
+  deleteOneBook(reqData: any) {
     let httpOption = {
-      headers :  new HttpHeaders({
+      headers: new HttpHeaders({
         'Content-type': 'application/json',
-        'x-access-token' : this.token
-
-    }) 
-    }
-    return this.httpService.GetService('bookstore_user/get_cart_items', true , httpOption)
+        'x-access-token': this.token,
+      }),
+    };
+    return this.httpService.DeleteService(
+      'bookstore_user/remove_cart_item/' + reqData._id,
+      true,
+      httpOption
+    );
   }
 }
