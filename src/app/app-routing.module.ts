@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DisplayBookComponent } from './component/display-book/display-book.component';
 import { GetAllBookComponent } from './component/get-all-book/get-all-book.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
@@ -9,6 +8,7 @@ import { AuthenticationGuard } from './authguard/authentication.guard';
 import { QuickviewComponent } from './component/quickview/quickview.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OrdersComponent } from './component/orders/orders.component';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'quickview', component: QuickviewComponent },
       { path: 'cart', component: CartComponent },
       { path: 'order', component: OrdersComponent},
+      {path:'wishlist', component:WishlistComponent}
     ]
   },
 ];

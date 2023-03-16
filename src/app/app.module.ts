@@ -24,6 +24,7 @@ import { AuthguardService } from './Service/AuthguardService/authguard.service';
 import { QuickviewComponent } from './component/quickview/quickview.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OrdersComponent } from './component/orders/orders.component';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { OrdersComponent } from './component/orders/orders.component';
     QuickviewComponent,
     CartComponent,
     OrdersComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,
