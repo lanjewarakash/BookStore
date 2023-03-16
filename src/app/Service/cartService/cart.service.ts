@@ -53,4 +53,16 @@ export class CartService {
       httpOption
     );
   }
+  customersdetails(reqData:any){
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'x-access-token': this.token,
+      }),
+    };
+    return this.httpService.PutService('bookstore_user/edit_user' , reqData,
+      true,
+      httpOption
+    );
+  }
 }

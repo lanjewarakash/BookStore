@@ -1,24 +1,123 @@
 <div>
-  <h3 >home/My Cart</h3>
-  <div class="MainContainer" *ngFor="let book of cartBook">
-    <h2 style="margin: 10px 0px 20px 20px">My Cart({{cartBook.length}})</h2>
-    <!-- <select id="map">
-      <option value="">Use Current Location</option>
-    </select> -->
-    <img src="../../../assets/Image 11@2x.png" />
-    <button class="placeOrder" type="submit">PLACE ORDER</button>
-    <div class="content">
-      <h2>{{book.product_id.bookName}}</h2>
-      <h5>{{book.product_id.author}}</h5>
-      <h1>Rs. {{book.product_id.discountPrice}} <span id="price">Rs. {{book.product_id.price}}</span></h1>
-      <button (click)="deleteSingleBoOk(book)" id="removeBook">Remove</button>
-      
+  <h3>home/My Cart</h3>
+  <div class="summary">
+    <h2 style="margin: 10px 0px 20px 20px">My Cart({{ cartBook.length }})</h2>
+    <div *ngFor="let book of cartBook" class="checkout">
+      <div class="left">
+        <img src="../../../assets/Image 11@2x.png" class="checkimage" />
+      </div>
+      <div class="right">
+        <h2>{{ book.product_id.bookName }}</h2>
+        <p>{{ book.product_id.author }}</p>
+        <h1>
+          Rs. {{ book.product_id.discountPrice }}
+          <span id="price">Rs. {{ book.product_id.price }}</span>
+        </h1>
+        <span class="material-symbols-outlined"> do_not_disturb_on </span
+        ><input id="increaseNumber" type="number" />
+        <span class="material-symbols-outlined"> add_circle </span>
+        <button (click)="deleteSingleBoOk(book)" id="removeBook">Remove</button>
+      </div>
+    </div>
+    <div *ngIf="placeOrder">
+      <button class="placeOrder" type="submit" (click)="addresssDetails()">
+        PLACE ORDER
+      </button>
     </div>
   </div>
-  <div class="second">
-    <h2 class="heading">Address Details</h2>
+</div>
+<div class="second" *ngIf="address">
+  <h2 class="heading">Address Details</h2>
+</div>
+
+<form [formGroup]="CustomerDetails" (ngSubmit)="onContinue()">
+  <div *ngIf="!address" class="addresssDetails">
+    <h1 style="padding: 20px">Customer Details</h1>
+
+    <div class="Input">
+      <div class="first">
+        <div>
+          <p class="heading1">Full Name</p>
+          <mat-form-field appearance="outline" class="fullName">
+            <input matInput type="text" formControlName="fullName" />
+            <mat-error>Enter Your FullName</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <p>Mobile Number</p>
+          <mat-form-field appearance="outline" class="mobileNumber">
+            <input matInput formControlName="mobileNumber" />
+            <mat-error>Enter Your Mobile Number</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div style="padding-left: 30px">
+        <p>Address</p>
+        <mat-form-field appearance="outline" class="address">
+          <input matInput type="text" formControlName="address" />
+          <mat-error>Enter your Address</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="first">
+        <div>
+          <p class="heading1">City/town</p>
+          <mat-form-field appearance="outline" class="fullName">
+            <input matInput type="text" formControlName="city" />
+            <mat-error>Enter City Name</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <p>State</p>
+          <mat-form-field appearance="outline" class="mobileNumber">
+            <input matInput id="akash" formControlName="state" />
+            <mat-error>Enter State Name</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div style="margin-left: 30px">
+        <mat-radio-group aria-label="Select an option">
+          <h4>Type</h4>
+          <mat-radio-button value="1">Home</mat-radio-button>
+          <mat-radio-button value="2">Work</mat-radio-button>
+          <mat-radio-button value="3">Other</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <button
+      class="Continue"
+      *ngIf="continue"
+      (click)="checkout()"
+      type="submit"
+    >
+      Continue
+    </button>
   </div>
-  <div class="second">
-    <h2 class="heading">Order Summary</h2>
+</form>
+
+<div class="second" *ngIf="summary">
+  <h2 class="heading">Order Summary</h2>
+</div>
+<div class="summary" *ngIf="!summary">
+  <h2 class="heading">Order Summary</h2>
+  <div *ngFor="let book of cartBook" class="checkout">
+    <div class="left">
+      <img src="../../../assets/Image 11@2x.png" class="checkimage" />
+    </div>
+    <div class="right">
+      <h2>{{ book.product_id.bookName }}</h2>
+      <p>{{ book.product_id.author }}</p>
+      <h1>
+        Rs. {{ book.product_id.discountPrice }}
+        <span id="price">Rs. {{ book.product_id.price }}</span>
+      </h1>
+    </div>
+  </div>
+  <div>
+    <div><button class="CheckOut">CHECKOUT</button></div>
   </div>
 </div>

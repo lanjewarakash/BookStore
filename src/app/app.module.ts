@@ -6,28 +6,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './component/home/home.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {  HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { GetAllBookComponent } from './component/get-all-book/get-all-book.component';
 import { DisplayBookComponent } from './component/display-book/display-book.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthguardService } from './Service/AuthguardService/authguard.service';
 import { QuickviewComponent } from './component/quickview/quickview.component';
 import { CartComponent } from './component/cart/cart.component';
-
-
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -53,12 +48,10 @@ import { CartComponent } from './component/cart/cart.component';
     FormsModule,
     HttpClientModule,
     MatCardModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+    MatRadioModule,
   ],
-  providers: [
-    AuthguardService
-  ],
-  bootstrap: [AppComponent]
+  providers: [AuthguardService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
