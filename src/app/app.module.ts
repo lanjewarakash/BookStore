@@ -13,6 +13,10 @@ import { HomeComponent } from './component/home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
+import { NgxPaginationModule } from 'ngx-pagination';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,6 +58,8 @@ import { WishlistComponent } from './component/wishlist/wishlist.component';
     MatCardModule,
     MatSnackBarModule,
     MatRadioModule,
+    NgxPaginationModule,
+    MatSelectModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent],
