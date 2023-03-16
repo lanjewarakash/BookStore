@@ -23,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthguardService } from './Service/AuthguardService/authguard.service';
 import { QuickviewComponent } from './component/quickview/quickview.component';
 import { CartComponent } from './component/cart/cart.component';
+import { OrdersComponent } from './component/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CartComponent } from './component/cart/cart.component';
     DisplayBookComponent,
     QuickviewComponent,
     CartComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,

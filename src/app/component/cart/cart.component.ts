@@ -77,4 +77,5 @@ export class CartComponent implements OnInit {
     this.summary = false;
     this.continue = false;
   }
+  
 }

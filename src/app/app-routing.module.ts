@@ -8,16 +8,23 @@ import { SignupComponent } from './component/signup/signup.component';
 import { AuthenticationGuard } from './authguard/authentication.guard';
 import { QuickviewComponent } from './component/quickview/quickview.component';
 import { CartComponent } from './component/cart/cart.component';
+import { OrdersComponent } from './component/orders/orders.component';
 
 const routes: Routes = [
-  {path : '' , redirectTo: '/login', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'signin', component: SignupComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'home', component: HomeComponent ,canActivate:[AuthenticationGuard],
-    children:[{path: 'displaybook', component: GetAllBookComponent},
-    {path: 'quickview', component: QuickviewComponent},
-    {path: 'cart', component: CartComponent}]
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: 'displaybook', component: GetAllBookComponent },
+      { path: 'quickview', component: QuickviewComponent },
+      { path: 'cart', component: CartComponent },
+      { path: 'order', component: OrdersComponent},
+    ]
   },
 ];
 
