@@ -14,9 +14,11 @@ export class DisplayBookComponent implements OnInit {
   itemsPerPage:number =8;
   totalProduct:any
   booklist = []
+  Search : string ='';
   ngOnInit() {
     this.dataservice.getbookdetails.subscribe((res: any) => {
       console.log('this is happen', res);
+      this.Search = res
       this.totalProduct =res.length;
     });
   }

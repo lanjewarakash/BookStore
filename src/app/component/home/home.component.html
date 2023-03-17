@@ -1,7 +1,7 @@
 <mat-toolbar>
   <img id="logoimage" src="../../../assets/book2.png" alt="" />
   <span id="logoname" (click)="bookStore()">BookStore</span>
-  <input type="search" name="" id="search" placeholder="search" />
+  <input type="text" name="" id="search" placeholder="search" (keyup)="searchBook($event)" />
 
   <button><span class="material-symbols-outlined"> person </span></button>
 

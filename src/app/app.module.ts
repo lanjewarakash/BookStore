@@ -29,6 +29,7 @@ import { QuickviewComponent } from './component/quickview/quickview.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OrdersComponent } from './component/orders/orders.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
+import { FilterPipe } from './Service/FilterService/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { WishlistComponent } from './component/wishlist/wishlist.component';
     CartComponent,
     OrdersComponent,
     WishlistComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
