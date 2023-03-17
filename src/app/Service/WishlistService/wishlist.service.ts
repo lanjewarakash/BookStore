@@ -48,7 +48,8 @@ export class WishlistService {
       }),
     };
     return this.httpService.DeleteService(
-      'bookstore_user/remove_wishlist_item/' + reqData._id,
+      'bookstore_user/remove_wishlist_item/' + reqData?.product_id?._id
+      ,
       true,
       httpOption
     );

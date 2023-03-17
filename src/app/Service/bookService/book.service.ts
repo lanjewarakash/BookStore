@@ -8,14 +8,17 @@ import { HttpService } from '../httpService/http.service';
 export class BookService {
   token:any
 
-  constructor(private httpservice: HttpService) { }
+  constructor(private httpservice: HttpService) { 
+    this.token = localStorage.getItem('token');
+
+  }
 
 
   getAllBook(){
     let httpOption = {
       headers : new HttpHeaders({
         'Content-type': 'application/json',
-        // 'Authorization': this.token
+        // 'x-access-token': this.token
       })
     }
     return this.httpservice.GetService('bookstore_user/get/book', false, httpOption)

@@ -1,20 +1,32 @@
-<p>wishlist works!</p>
-<div>
-  <div class="summary">
-    <h2 style="margin: 10px 0px 20px 20px">My Cart({{ wishlist.length }})</h2>
-    <div *ngFor="let wish of wishlist" class="checkout">
+<div class="summary">
+  <h4 style="padding-top: 10px">Home/ My Wishlist</h4>
+  <div class="wishlist">
+    <h2 style="margin: 10px 0px 20px 20px">
+      My Wishlist({{ wishlist.length }})
+    </h2>
+  </div>
+  <div *ngFor="let wish of wishlist" class="checkout">
+    <div style="display: flex; gap: 30px">
       <div class="left">
         <img src="../../../assets/Image 11@2x.png" class="checkimage" />
       </div>
+
       <div class="right">
-        <h2>{{wish.product_id}}</h2>
-        <!-- <p>{{ wish }}</p> -->
+        <h2>{{ wish?.product_id?.bookName }}</h2>
+        <p>{{ wish?.product_id?.author }}</p>
         <h1>
-          Rs. {{ wish.product_id }}
-          <span >Rs. {{ wish.product_id  }}</span>
+          Rs. {{ wish?.product_id?.discountPrice }}
+          <span id="price">Rs. {{ wish?.product_id?.price }}</span>
         </h1>
-        <button (click)="deletewishListBooks(wish)" id="removeBook">Remove</button>
       </div>
+    </div>
+    <div class="removeBook">
+      <span
+        class="material-symbols-outlined"
+        (click)="deletewishListBooks(wish)"
+      >
+        delete
+      </span>
     </div>
   </div>
 </div>
