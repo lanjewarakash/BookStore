@@ -15,13 +15,16 @@ export class CartComponent implements OnInit {
     private snackbar: MatSnackBar
   ) {}
   cartBook: any = [];
+
   CustomerDetails!: FormGroup;
+  addressType: any[] = ['Home', 'work', 'others'];
   count: any;
   customerDetails = false;
   address = true;
   placeOrder = true;
   summary = true;
   continue = true;
+  item_qty: any;
 
   ngOnInit() {
     this.getAllBook();
@@ -37,7 +40,7 @@ export class CartComponent implements OnInit {
   getAllBook() {
     this.cartService.getAllBooks().subscribe((response: any) => {
       (this.cartBook = response.result),
-        console.log('Get All Book API is Hit', response);
+        console.log('Get All Book in Cart API is Hit', response);
     });
   }
 
@@ -48,17 +51,25 @@ export class CartComponent implements OnInit {
       console.log('delete api is hiting', response);
       location.reload();
     });
+    this.snackbar.open('Book Removed', '', {
+      duration: 2000,
+      verticalPosition: 'bottom',
+    });
   }
+
   addresssDetails() {
     this.address = false;
     this.placeOrder = false;
   }
   onContinue() {
     this.customerDetails = true;
+    console.log(this.customerDetails);
     if (this.CustomerDetails.valid) {
+      this.summary = false;
+      this.continue = false;
       console.log('customers Details is callled', this.CustomerDetails.value);
       let data = {
-        addressType: 'Home',
+        addressType: this.addressType,
         fullAddress: this.CustomerDetails.value.address,
         city: this.CustomerDetails.value.city,
         state: this.CustomerDetails.value.state,
@@ -73,9 +84,29 @@ export class CartComponent implements OnInit {
     }
   }
 
-  checkout() {
-    this.summary = false;
-    this.continue = false;
+  increasebook(Book: any) {
+    this.item_qty = Book.quantityToBuy;
+    this.item_qty += 1;
+    console.log('increased', this.item_qty);
+    this.updateCount(Book);
   }
-  
+
+  decreasebook(Book: any) {
+    this.item_qty = Book.quantityToBuy;
+    if (this.item_qty > 0) {
+      this.item_qty -= 1;
+
+      console.log('decrease', this.item_qty);
+      this.updateCount(Book);
+    }
+  }
+  updateCount(Book: any) {
+    let payload = {
+      quantityToBuy: this.item_qty,
+    };
+    this.cartService.quantity(Book._id, payload).subscribe((res: any) => {
+      console.log(res);
+      location.reload();
+    });
+  }
 }

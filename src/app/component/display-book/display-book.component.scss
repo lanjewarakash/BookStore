@@ -1,15 +1,17 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding: 10px;
+  
 }
 .box1 {
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #e2e2e2;
   border-radius: 3px;
   opacity: 1;
-  height: 350px;
-  width: 235px;
+  height: fit-content;
+  width: 230px;
   box-sizing: border-box;
   margin-left: 10px;
   margin-right: 10px;
@@ -24,12 +26,12 @@
   box-shadow: 0px 0px 0px #00000040;
 }
 img {
-  width: 105px;
-  height: 135px;
+  width: 90px;
+  height: 110px;
 }
 .image {
-  height: 172px;
-  width: 235px;
+  height: 150px;
+  width: 230px;
   background-color: #f5f5f5;
   box-sizing: border-box;
   display: flex;
@@ -37,17 +39,25 @@ img {
   align-items: center;
 }
 .content {
-  padding-left: 3px;
+  padding-left: 10px;
 }
 
 .contentName {
   padding: 0px 0px 0px 0px;
-  margin: 5px;
+  margin: 2px;
+  border: none;
 }
 #price {
-  font-size: smaller;
+  font-size: small;
   font-weight: 200;
   text-decoration: line-through;
+  border: none;
+}
+#discountPrice{
+  font-size: medium;
+  border: none;
+  font-weight: 600;
+  
 }
 
 #star {
@@ -63,12 +73,7 @@ img {
   padding: 0%;
 }
 
-#discountPrice {
-  background: #ffffff 0% 0% no-repeat padding-box;
-  border: 1px solid #e2e2e2;
-  border-radius: 3px;
-  opacity: 1;
-}
+
 .twoButton {
   display: flex;
   flex-direction: row;
@@ -91,6 +96,12 @@ button {
 #heart {
   font-size: 15px;
   color: white;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0%;
 }
 
 @media screen and (max-width: 600px) {

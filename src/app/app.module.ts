@@ -15,6 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -61,7 +63,8 @@ import { FilterPipe } from './Service/FilterService/filter.pipe';
     MatSnackBarModule,
     MatRadioModule,
     NgxPaginationModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent],

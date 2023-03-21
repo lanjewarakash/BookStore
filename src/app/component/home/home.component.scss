@@ -14,7 +14,7 @@ mat-toolbar {
 }
 #logoname {
   color: white;
-  padding-right: 20px;
+  padding-right: 50px;
   padding-left: 10px;
 }
 #img2 {
@@ -26,7 +26,7 @@ mat-toolbar {
 }
 .material-symbols-outlined {
   color: white;
-  padding: 15px;
+  padding: 18px;
 }
 button {
   background-color: brown;
@@ -58,4 +58,30 @@ footer {
   color: white;
   margin-left: 100px;
   padding-top: 5px;
+}
+#person{
+  padding-left: 130px;
+
+}
+@media screen and (max-width: 600px) {
+  #person {
+    padding: 0%;
+  }
+  .material-symbols-outlined {
+    color: white;
+    padding: 15px;
+  }
+  #logoname {
+    color: white;
+  padding-right: 20px;
+  }
+  // .container {
+  //   display: flex;
+  //   flex-direction: column;
+
+  //   margin-left: 60px;
+  // }
+  // h1 {
+  //   margin-left: 80px;
+  // }
 }

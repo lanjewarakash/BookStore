@@ -1,5 +1,7 @@
+import { NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { empty } from 'rxjs';
 import { DataService } from 'src/app/Service/DataService/data.service';
 
 @Component({
@@ -10,16 +12,16 @@ import { DataService } from 'src/app/Service/DataService/data.service';
 export class DisplayBookComponent implements OnInit {
   constructor(private dataservice: DataService, private router: Router) {}
   @Input() childArray: any;
-  p:number =1;
-  itemsPerPage:number =8;
-  totalProduct:any
-  booklist = []
-  Search : string ='';
+  p: number = 1;
+  itemsPerPage: number = 8; 
+  totalProduct: any;
+  Search: any;
+  pagination = true
   ngOnInit() {
     this.dataservice.getbookdetails.subscribe((res: any) => {
       console.log('this is happen', res);
-      this.Search = res
-      this.totalProduct =res.length;
+      this.Search = res;
+      this.totalProduct = res.length;
     });
   }
 
@@ -27,18 +29,10 @@ export class DisplayBookComponent implements OnInit {
     this.dataservice.SendBookDetails(book);
 
     this.router.navigateByUrl('/home/quickview');
-    
   }
-  lowtohigh() {
-    this.booklist = this.booklist.sort((low: any, high: any) => low.discountPrice - high.discountPrice);
+  paginations(){
+    if (empty(this.totalProduct)){
+      this.pagination = false
+    }
   }
-  hightolow() {
-    this.booklist = this.booklist.sort((low: any, high: any) => high.discountPrice - low.discountPrice);
-  }
-  newestarrivals() {
-    this.booklist.reverse();
-  }
-
-
-
 }

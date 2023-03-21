@@ -54,9 +54,22 @@ img {
 #increaseNumber {
   width: 30px;
   margin: 5px;
+  border: 0.5px solid rgb(176, 173, 173);
+  background: #FAFAFA 0% 0% no-repeat padding-box;
+
+
+}
+.decrease ,.increase{
+  border-radius: 50%;
+    border: 0.5px solid rgb(176, 173, 173);
+   
+    padding: 7px;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+border: 1px solid #DBDBDB;
 }
 .material-symbols-outlined {
-  font-size: medium;
+  font-size: large;
+  background-color: blue;
 }
 .second {
   width: 70%;

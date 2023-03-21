@@ -1,14 +1,26 @@
-<h1 style="margin-left: 60px;">Books
-<span style="float: right;background: #FFFFFF 0% 0% no-repeat padding-box;
-box-shadow: 0px 3px 6px #00000029; border:none;"><select name="" id="">
-  <option (click)="lowtohigh()"  value="">Sort by relevance</option>
-  <option (click)="hightolow()" value="">price:Low to High</option>
-  <option (click)="newestarrivals() " value="">price:HIgh to Low</option>
-  <option value="">Newest Arrived</option>
-</select></span></h1>
+<h1 style="margin-left: 150px">
+  Books
+  <span style="font-size: medium; color: grey">({{ childArray.length }})</span>
+  <span
+    style="
+      float: right;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 6px #00000029;
+      border: none;
+    "
+  ></span>
+</h1>
+
 <div class="container">
-  <div class="box1" *ngFor="let book of childArray| filter :Search | paginate:{itemsPerPage:itemsPerPage, currentPage: p}">
-    <div class="image" (click)="onBookclick(book)" >
+  <div
+    class="box1"
+    *ngFor="
+      let book of childArray
+        | filter : Search
+        | paginate : { itemsPerPage: itemsPerPage, currentPage: p }
+    "
+  >
+    <div class="image" (click)="onBookclick(book)">
       <img src="../../../assets/Image 11@2x.png" alt="" />
     </div>
     <div class="content">
@@ -16,26 +28,27 @@ box-shadow: 0px 3px 6px #00000029; border:none;"><select name="" id="">
         {{ book.bookName }}
       </h3>
 
-      <h5 class="contentName" style="font-size: smaller">
+      <h5 class="contentName" style="font-size: x-small ; color: #878787;">
         By {{ book.author }}
       </h5>
       <p class="contentName">
         <button id="starbutton">
-        
           4.5 <i id="star" class="material-symbols-outlined"> star </i>
         </button>
       </p>
-      <h2 class="contentName">RS. {{ book.discountPrice }} <span id="price">Rs.{{book.price}}</span> </h2>
+      <h2 class="contentName" id="discountPrice">
+        RS. {{ book.discountPrice }} <span id="price">Rs.{{ book.price }}</span>
+      </h2>
       <div class="twoButton">
-
         <button id="addButton">ADD TO BAG</button>
-        <button id="wishButton"> <span  id="heart"  class="material-symbols-outlined">
-          favorite
-          </span> WISHLIST</button>
+        <button id="wishButton">
+          <span id="heart" class="material-symbols-outlined"> favorite </span>
+          WISHLIST
+        </button>
       </div>
     </div>
   </div>
-  <div class="pagination">
-    <pagination-controls (pageChange)="p= $event"></pagination-controls>
-  </div>
+</div>
+<div class="pagination">
+  <pagination-controls click="paginations()"  (pageChange)="p = $event"></pagination-controls>
 </div>

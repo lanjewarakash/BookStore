@@ -1,9 +1,24 @@
 <h1 style="margin-left: 50px">Books</h1>
 <div class="MainContainer">
+  <div class="containerZero" >
+    <img src="../../../assets/Image 11@2x.png" class="images" >
+    <img src="../../../assets/Image 12@2x.png" class="images">
+
+  </div>
   <div class="containerOne">
-    <img src="../../../assets/Image 11@2x.png" alt="" />
+    <img src="../../../assets/Image 11@2x.png" id="mainimage" />
     <div class="twoButton">
-      <button id="addButton" (click)="addCarts()">ADD TO BAG</button>
+      <button id="addButton"  (click)="addCarts()"
+          *ngIf="quantity">ADD TO BAG
+         </button>
+         <div  style="display: flex;" *ngIf="addBag" (click)="hideshow()" >
+          <button class="decrease" (click)="decrement()"> - </button>
+          <span id="Quantity" >{{increse}} </span>
+            <button class="increase" (click)="increment()"> + </button>
+
+         </div>
+
+
       <button id="wishButton" routerLink="/home/wishlist" (click)="addwishlistBook()">
         <span id="heart" class="material-symbols-outlined"> favorite </span>
         WISHLIST
@@ -11,15 +26,19 @@
     </div>
   </div>
   <div class="containerTwo">
-    <h1 class="contentName">{{ Book.bookName }}</h1>
-    <p class="contentName">By {{ Book.author }}</p>
+    <h1 class="contentName" style="font-weight: 500;">{{ Book.bookName }} </h1>
+    <p class="contentName" style="font-size: medium; color: grey;">By {{ Book.author }}</p>
     <p class="contentName">
       <button id="starbutton">
         4.5 <i id="star" class="material-symbols-outlined"> star </i>
       </button>
     </p>
 
-    <h1 class="contentName">RS. {{ Book.discountPrice }}</h1>
+    <h1 class="contentName" id="discountPrice">RS. {{ Book.discountPrice }} <span id="price">Rs.{{ Book.price }}</span></h1>
+    <hr>
+
+
+    <p style="color: grey; font-size: larger;">*Book Detail</p>
     <p>
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
       eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -27,6 +46,7 @@
       clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
       amet.d
     </p>
+    <hr>
     <h2 class="contentName">Customers Feedback</h2>
     <h4 class="contentName">OverAll rating</h4>
     <p>
@@ -39,7 +59,7 @@
     <textarea
       name=""
       id=""
-      cols="100"
+      cols="65"
       rows="5"
       placeholder="write your review"
     ></textarea>
@@ -48,35 +68,12 @@
         float: right;
         width: 130px;
         padding: 10px;
-        background-color: rgb(13, 13, 109);
+        background-color: #3371b5;
       "
     >
       Submit
     </button>
     <div>
-      <!-- <h2 class="contentName">Aniket Chile</h2>
-      <i  class="material-symbols-outlined"> star </i>
-      <i  class="material-symbols-outlined"> star </i>
-      <i  class="material-symbols-outlined"> star </i>
-      <i class="material-symbols-outlined"> star </i>
-      <i  class="material-symbols-outlined"> star </i>
-    </div>
-     <p class="contentName">
-      Good product. Even though the translation could have been better,
-      Chanakya's neeti are thought provoking. Chanakya has written on many
-      different topics and his writings are succinct.
-    </p>
-    <h2 class="contentName">Sweta Bodkar</h2>
-    <i  class="material-symbols-outlined"> star </i>
-    <i  class="material-symbols-outlined"> star </i>
-    <i  class="material-symbols-outlined"> star </i>
-    <i  class="material-symbols-outlined"> star </i>
-    <i  class="material-symbols-outlined"> star </i>
-    <p class="contentName">
-      Good product. Even though the translation could have been better,
-      Chanakya's neeti are thought provoking. Chanakya has written on many
-      different topics and his writings are succinct.
-    </p> -->
     </div>
   </div>
 

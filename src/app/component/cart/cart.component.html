@@ -17,9 +17,9 @@
           Rs. {{ book.product_id.discountPrice }}
           <span id="price">Rs. {{ book.product_id.price }}</span>
         </h1>
-        <span class="material-symbols-outlined"> do_not_disturb_on </span
-        ><input id="increaseNumber" type="number" />
-        <span class="material-symbols-outlined"> add_circle </span>
+        <button class="decrease" (click)="decreasebook(book)">-</button>
+        <span id="increaseNumber">{{ book.quantityToBuy }}</span>
+        <button class="increase" (click)="increasebook(book)">+</button>
         <button (click)="deleteSingleBoOk(book)" id="removeBook">Remove</button>
       </div>
     </div>
@@ -38,7 +38,7 @@
   <div *ngIf="!address" class="addresssDetails">
     <h1 style="padding: 20px">Customer Details</h1>
 
-    <div class="Input">
+    <div  class="Input">
       <div class="first">
         <div>
           <p class="heading1">Full Name</p>
@@ -96,9 +96,8 @@
       <button
         class="Continue"
         *ngIf="continue"
-        (click)="checkout()"
-        type="submit"
-      >
+        
+        type="submit" (click)="onContinue()">
         Continue
       </button>
     </div>

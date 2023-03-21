@@ -65,4 +65,15 @@ export class CartService {
       httpOption
     );
   }
+
+  quantity(bookid:any,reqData:any){
+    let httpOption ={
+      headers : new HttpHeaders ({
+        'Content-type':'application/json',
+        'x-access-token':this.token
+      })
+    }
+    return this.httpService.PutService('bookstore_user/cart_item_quantity/'+bookid,reqData, true ,httpOption)
+
+  }
 }

@@ -1,13 +1,41 @@
 <mat-toolbar>
   <img id="logoimage" src="../../../assets/book2.png" alt="" />
   <span id="logoname" (click)="bookStore()">BookStore</span>
-  <input type="text" name="" id="search" placeholder="search" (keyup)="searchBook($event)" />
+  <input
+    type="text"
+    name=""
+    id="search"
+    placeholder="search"
+    (keyup)="searchBook($event)"
+  />
+  <div id="person">
+    <button [matMenuTriggerFor]="menu">
+      <span class="material-symbols-outlined"> person </span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <h1>Welcome</h1>
+      <h5>To acsess account and manage orders</h5>
+      <button
+        style="
+          border: solid brown 2px;
+          width: 100px;
+          display: flex;
+          margin-left: 10px;
+          background-color: white;
+        "
+        (click)="logout()"
+        mat-menu-item
+      >
+        LOGOUT
+      </button>
+      <p style="margin-left: 10px">My Orders</p>
+      <p style="margin-left: 10px" routerLink="/home/wishlist">Wishlist</p>
+    </mat-menu>
 
-  <button><span class="material-symbols-outlined"> person </span></button>
-
-  <a routerLink="/home/cart">
-    <span class="material-symbols-outlined"> shopping_cart </span>
-  </a>
+    <a routerLink="/home/cart">
+      <span class="material-symbols-outlined"> shopping_cart </span>
+    </a>
+  </div>
 </mat-toolbar>
 
 <link

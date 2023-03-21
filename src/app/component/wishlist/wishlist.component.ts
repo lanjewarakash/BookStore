@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { WishlistService } from 'src/app/Service/WishlistService/wishlist.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { WishlistService } from 'src/app/Service/WishlistService/wishlist.servic
   styleUrls: ['./wishlist.component.scss'],
 })
 export class WishlistComponent implements OnInit {
-  constructor(private wishService: WishlistService) {}
+  constructor(private wishService: WishlistService , private snackbar : MatSnackBar) {}
   wishlist : any = [];
   Book:any;
   ngOnInit() {
@@ -29,6 +30,9 @@ export class WishlistComponent implements OnInit {
       console.log('delete Api is Called', response);
       location.reload();
     })
+    this.snackbar.open('WishList Book Removed' ,'',{
+      duration:2000,
+      verticalPosition:'bottom'
+    })
   }
- 
   }
