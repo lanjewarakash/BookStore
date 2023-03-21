@@ -9,12 +9,12 @@
     <img src="../../../assets/Image 11@2x.png" id="mainimage" />
     <div class="twoButton">
       <button id="addButton"  (click)="addCarts()"
-          *ngIf="quantity">ADD TO BAG
+          *ngIf="count">ADD TO BAG
          </button>
          <div  style="display: flex;" *ngIf="addBag" (click)="hideshow()" >
-          <button class="decrease" (click)="decrement()"> - </button>
-          <span id="Quantity" >{{increse}} </span>
-            <button class="increase" (click)="increment()"> + </button>
+          <button class="decrease" (click)="decrements(Book)"> - </button>
+          <span id="Quantity" >{{Book.quantity}} </span>
+            <button class="increase" (click)="increments(Book)"> + </button>
 
          </div>
 

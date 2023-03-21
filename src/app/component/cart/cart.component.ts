@@ -89,22 +89,29 @@ export class CartComponent implements OnInit {
     this.item_qty += 1;
     console.log('increased', this.item_qty);
     this.updateCount(Book);
+    this.snackbar.open('Book is increased', '', {
+      duration: 2000,
+      verticalPosition: 'bottom',
+    });
   }
 
   decreasebook(Book: any) {
     this.item_qty = Book.quantityToBuy;
     if (this.item_qty > 0) {
       this.item_qty -= 1;
-
       console.log('decrease', this.item_qty);
       this.updateCount(Book);
+      this.snackbar.open('Book is decreased', '', {
+        duration: 2000,
+        verticalPosition: 'bottom',
+      });
     }
   }
   updateCount(Book: any) {
-    let payload = {
+    let reqData = {
       quantityToBuy: this.item_qty,
     };
-    this.cartService.quantity(Book._id, payload).subscribe((res: any) => {
+    this.cartService.quantity(Book._id, reqData).subscribe((res: any) => {
       console.log(res);
       location.reload();
     });
