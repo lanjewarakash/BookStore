@@ -1,3 +1,4 @@
+<form [formGroup]="signup" (ngSubmit)="onsignup()">
 <div class="mainContainer">
     <div class="containerOne">
       <img src="../../../assets/book1.png" />
@@ -14,26 +15,22 @@
 
       <span>Full Name</span>
       <mat-form-field appearance="outline">
-        <mat-label>Enter a Full Name</mat-label>
-        <input matInput placeholder="Enter Full Name" />
-        <mat-error>Enter Full NAme</mat-error>
+        <input matInput  formControlName="fullName"/>
+        <mat-error>Enter Full Name</mat-error>
       </mat-form-field>
       <span>Email Id</span>
       <mat-form-field appearance="outline">
-        <mat-label>Enter a Email ID</mat-label>
-        <input matInput placeholder="Enter a Email ID" />
+        <input type="email" matInput formControlName="email"/>
         <mat-error>Enter Your Email ID</mat-error>
       </mat-form-field>
       <span>Password</span>
       <mat-form-field appearance="outline">
-        <mat-label>Enter a Password</mat-label>
-        <input matInput placeholder="Enter a PassWord" />
+        <input type="password" matInput formControlName="password" />
         <mat-error>Enter Correct Password</mat-error>
       </mat-form-field>
       <span>Mobile Number</span>
       <mat-form-field appearance="outline">
-        <mat-label>Enter Mobile Number</mat-label>
-        <input matInput placeholder="Enter a Mobile Number" />
+        <input matInput formControlName="phone" />
         <mat-error>Enter Mobile Number</mat-error>
       </mat-form-field>
   
@@ -44,4 +41,4 @@
       
     </div>
   </div>
-  
+</form>
