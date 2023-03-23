@@ -30,6 +30,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { OrdersComponent } from './component/orders/orders.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { FilterPipe } from './Service/FilterService/filter.pipe';
+import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { FilterPipe } from './Service/FilterService/filter.pipe';
     OrdersComponent,
     WishlistComponent,
     FilterPipe,
+    AdminloginComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,13 +9,16 @@ import { QuickviewComponent } from './component/quickview/quickview.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OrdersComponent } from './component/orders/orders.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
+import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'signin', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+  {path: 'adminlogin', component : AdminloginComponent},
 
   { path: 'quickview', component: QuickviewComponent },
+
   {
     path: 'home',
     component: HomeComponent,
