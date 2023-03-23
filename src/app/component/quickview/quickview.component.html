@@ -1,81 +1,113 @@
-<h1 style="margin-left: 50px">Books</h1>
+<app-home  [badgeItem]='badgeCount'></app-home>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<h2 style="margin-left: 50px"><span routerLink="/home/displaybook" style="color: gray;">home</span>/Books(01)</h2>
 <div class="MainContainer">
-  <div class="containerZero" >
-    <img src="../../../assets/Image 11@2x.png" class="images" >
-    <img src="../../../assets/Image 12@2x.png" class="images">
-
+  <div class="containerZero">
+    <img src="../../../assets/Image 11@2x.png" class="images" />
+    <img src="../../../assets/Image 12@2x.png" class="images" />
   </div>
   <div class="containerOne">
     <img src="../../../assets/Image 11@2x.png" id="mainimage" />
     <div class="twoButton">
-      <button id="addButton"  (click)="addCarts()"
-          *ngIf="count">ADD TO BAG
-         </button>
-         <div  style="display: flex;" *ngIf="addBag" (click)="hideshow()" >
-          <button class="decrease" (click)="decrements(Book)"> - </button>
-          <span id="Quantity" >{{Book.quantity}} </span>
-            <button class="increase" (click)="increments(Book)"> + </button>
+      <button id="addButton" (click)="addCarts()" *ngIf="count">
+        ADD TO BAG
+      </button>
+      <div style="display: flex" *ngIf="addBag" (click)="hideshow()">
+        <button class="decrease" (click)="decrements(Book)">-</button>
+        <span id="Quantity">{{ badgeCount }} </span>
+        <button class="increase" (click)="  increments(Book) ">+</button>
+      </div>
 
-         </div>
-
-
-      <button id="wishButton" routerLink="/home/wishlist" (click)="addwishlistBook()">
+      <button
+        id="wishButton"
+        routerLink="/home/wishlist"
+        (click)="addwishlistBook()"
+      >
         <span id="heart" class="material-symbols-outlined"> favorite </span>
         WISHLIST
       </button>
     </div>
   </div>
   <div class="containerTwo">
-    <h1 class="contentName" style="font-weight: 500;">{{ Book.bookName }} </h1>
-    <p class="contentName" style="font-size: medium; color: grey;">By {{ Book.author }}</p>
+    <h1 class="contentName" style="font-weight: 500">{{ Book.bookName }}</h1>
+    <p class="contentName" style="font-size: medium; color: grey">
+      By {{ Book.author }}
+    </p>
     <p class="contentName">
       <button id="starbutton">
         4.5 <i id="star" class="material-symbols-outlined"> star </i>
       </button>
     </p>
 
-    <h1 class="contentName" id="discountPrice">RS. {{ Book.discountPrice }} <span id="price">Rs.{{ Book.price }}</span></h1>
-    <hr>
+    <h1 class="contentName" id="discountPrice">
+      RS. {{ Book.discountPrice }} <span id="price">Rs.{{ Book.price }}</span>
+    </h1>
+    <hr />
 
-
-    <p style="color: grey; font-size: larger;">*Book Detail</p>
-    <p>
+    <p style="color: grey; font-size: larger">*Book Detail</p>
+    <h3>{{Book.description}} <br>
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
       eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
       voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet.d
-    </p>
-    <hr>
+      clita kasd gubergren, no sea takimata sanctus est
+    </h3>
+    <hr />
     <h2 class="contentName">Customers Feedback</h2>
-    <h4 class="contentName">OverAll rating</h4>
-    <p>
-      <i class="star" class="material-symbols-outlined"> star </i>
-      <i class="star" class="material-symbols-outlined"> star </i>
-      <i class="star" class="material-symbols-outlined"> star </i>
-      <i class="star" class="material-symbols-outlined"> star </i>
-      <i class="star" class="material-symbols-outlined"> star </i>
-    </p>
-    <textarea
-      name=""
-      id=""
-      cols="65"
-      rows="5"
-      placeholder="write your review"
-    ></textarea>
-    <button
-      style="
-        float: right;
-        width: 130px;
-        padding: 10px;
-        background-color: #3371b5;
-      "
-    >
-      Submit
-    </button>
-    <div>
+
+   <div class="feedback">
+     <h4 class="contentName">OverAll rating</h4>
+     <div class="stars">
+      <input type="radio" name="rate" id="star5" value="5">
+      <label for="star5" class="fas fa-star"></label>
+      <input type="radio" name="rate" id="star4" value="4">
+      <label for="star4" class="fas fa-star"></label>
+      <input type="radio" name="rate" id="star3" value="3">
+      <label for="star3" class="fas fa-star"></label>
+      <input type="radio" name="rate" id="star2" value="2">
+      <label for="star2" class="fas fa-star"></label>
+      <input type="radio" name="rate" id="star1" value="1">
+      <label for="star1" class="fas fa-star" ></label>
+
+    </div>
+
+    <div class="comment">
+      <textarea name="" id="" cols="62" rows="7" placeholder="write your review" [(ngModel)]="comments"></textarea>
+      
+    </div>
+    <div   class="submitbutton">
+      <button id="submitbutton" 
+    type="submit" (click)="addFeedback()"> Submit</button>
     </div>
   </div>
 
-  <div></div>
+    <div></div>
+    <div class="Feedback" *ngFor="let fbck of feedbacks">
+      
+      <div class="feedback">
+        <h2 class="contentName">{{ fbck.user_id.fullName }}</h2>
+        <div class="stars">
+            <span>
+              {{ fbck.rating }} </span>
+           <input type="radio" name="rate" id="star5" value="5">
+           <label for="star5" class="fas fa-star"></label>
+           <input type="radio" name="rate" id="star4" value="4">
+           <label for="star4" class="fas fa-star"></label>
+           <input type="radio" name="rate" id="star3" value="3">
+           <label for="star3" class="fas fa-star"></label>
+           <input type="radio" name="rate" id="star2" value="2">
+           <label for="star2" class="fas fa-star"></label>
+           <input type="radio" name="rate" id="star1" value="1">
+           <label for="star1" class="fas fa-star" ></label>
+     
+         </div>
+         <p class="contentName">
+           {{ fbck.comment }}
+         </p>
+     
+      
+       </div>
+      
+    </div>
+  </div>
 </div>
+

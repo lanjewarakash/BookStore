@@ -15,17 +15,17 @@ const routes: Routes = [
   { path: 'signin', component: SignupComponent },
   { path: 'login', component: LoginComponent },
 
+  { path: 'quickview', component: QuickviewComponent },
   {
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthenticationGuard],
     children: [
       { path: 'displaybook', component: GetAllBookComponent },
-      { path: 'quickview', component: QuickviewComponent },
       { path: 'cart', component: CartComponent },
-      { path: 'order', component: OrdersComponent},
-      {path:'wishlist', component:WishlistComponent}
-    ]
+      { path: 'order', component: OrdersComponent },
+      { path: 'wishlist', component: WishlistComponent },
+    ],
   },
 ];
 

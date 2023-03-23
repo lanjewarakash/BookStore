@@ -1,2 +1,12 @@
 
+<div style="margin: 20px">
+  <button mat-button  [matMenuTriggerFor]="menu"  class="sorting" >Sort By Relavance</button>
+  <mat-menu #menu="matMenu" class="sorting">
+    <button mat-menu-item (click)="lowestPrice()">Price: Low to High</button>
+    <button mat-menu-item (click)="highestPrice()" >Price: High to Low</button>
+    <button mat-menu-item  (click)="newestArrival()">Newest Arrivals</button>
+  </mat-menu>
+</div>
+
+
 <app-display-book [childArray]="bookArray"></app-display-book>

@@ -16,9 +16,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
-
-
-
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -64,7 +62,9 @@ import { FilterPipe } from './Service/FilterService/filter.pipe';
     MatRadioModule,
     NgxPaginationModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatBadgeModule
+
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent],

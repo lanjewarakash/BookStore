@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { empty } from 'rxjs';
@@ -10,16 +9,16 @@ import { DataService } from 'src/app/Service/DataService/data.service';
   styleUrls: ['./display-book.component.scss'],
 })
 export class DisplayBookComponent implements OnInit {
-  constructor(private dataservice: DataService, private router: Router) {}
   @Input() childArray: any;
   p: number = 1;
-  itemsPerPage: number = 8; 
+  itemsPerPage: number = 8;
   totalProduct: any;
+  pagination = true;
   Search: any;
-  pagination = true
+  constructor(private dataservice: DataService, private router: Router) {}
   ngOnInit() {
     this.dataservice.getbookdetails.subscribe((res: any) => {
-      console.log('this is happen', res);
+      console.log('Data After Search', res);
       this.Search = res;
       this.totalProduct = res.length;
     });
@@ -27,12 +26,11 @@ export class DisplayBookComponent implements OnInit {
 
   onBookclick(book: any) {
     this.dataservice.SendBookDetails(book);
-
-    this.router.navigateByUrl('/home/quickview');
+    this.router.navigateByUrl('/quickview');
   }
-  paginations(){
-    if (empty(this.totalProduct)){
-      this.pagination = false
+  paginations() {
+    if (this.totalProduct==0) {
+      this.pagination = false;
     }
   }
 }

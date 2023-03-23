@@ -76,4 +76,24 @@ export class CartService {
     return this.httpService.PutService('bookstore_user/cart_item_quantity/'+bookid,reqData, true ,httpOption)
 
   }
+  getFeedback(bookid:any){
+    let httpOption = {
+      headers : new HttpHeaders ({
+        'Content-type': 'application/json',
+        'x-access-token':this.token
+      })
+    }
+    return this.httpService.GetService('bookstore_user/get/feedback/'+bookid, true , httpOption)
+
+  }
+  addFeedback(reqData:any){
+    let httpOption = {
+      headers : new HttpHeaders ({
+        'Content-type': 'application/json',
+        'x-access-token':this.token
+      })
+    }
+    return this.httpService.PostService(`bookstore_user/add/feedback/${reqData.bookid}`, reqData, true , httpOption)
+
+  }
 }

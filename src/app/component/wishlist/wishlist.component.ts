@@ -25,14 +25,15 @@ export class WishlistComponent implements OnInit {
   }
   deletewishListBooks(reqData:any){
     console.log(reqData);
-    
     this.wishService.deleteWishlistBook(reqData).subscribe((response:any)=>{
       console.log('delete Api is Called', response);
-      location.reload();
     })
     this.snackbar.open('WishList Book Removed' ,'',{
       duration:2000,
       verticalPosition:'bottom'
     })
+    
+    this.getWishlistBooks()
+
   }
   }

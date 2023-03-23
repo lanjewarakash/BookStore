@@ -15,18 +15,31 @@ export class QuickviewComponent implements OnInit {
     private cartService: CartService,
     private wishService: WishlistService,
     private snackbar: MatSnackBar
-  ) {}
+  ) {
+    this.hideBadge = true;
+    this.badgeCount = 1;
+  }
   Book: any;
   increase: any;
   decrease: any;
   addBag: boolean = false;
   count = true;
-  item_qty: any;
+  item_qty = 1;
+  feedbacks: any;
+  comments: string = '';
+  value: string = '';
+  bookid: any;
+  hideBadge: boolean = true;
+  showCount: boolean = true;
+  badgeCount: number = 1;
+
   ngOnInit(): void {
     this.dataservice.getbookdetails.subscribe((result: any) => {
-      this.Book= result;
+      this.Book = result;
       console.log('data of quickview', this.Book);
+      this.getAllFeedback();
     });
+    this.addwishlistBook();
   }
   addCarts() {
     let reqData = {
@@ -54,23 +67,30 @@ export class QuickviewComponent implements OnInit {
       verticalPosition: 'bottom',
     });
   }
+
   hideshow() {
-    this.addBag = true;
-    this.count = false;
+    this.showCount = false;
+    this.hideBadge = true;
   }
 
   increment() {
-    this.increase++;
+    this.badgeCount++;
+    this.hideBadge = false;
   }
   decrement() {
-    this.decrease--;
+    if (this.badgeCount < 0) return;
+    if (this.badgeCount == 0) {
+      this.hideBadge = true;
+    }
   }
 
   increments(Book: any) {
-    this.item_qty = Book.quantity;
+    this.increment();
+    this.item_qty = Book.quantityToBuy;
     this.item_qty += 1;
     console.log('increase book quantity ', this.item_qty);
     this.updateCount(Book);
+
     this.snackbar.open('Book is increased', '', {
       duration: 2000,
       verticalPosition: 'bottom',
@@ -78,12 +98,14 @@ export class QuickviewComponent implements OnInit {
   }
 
   decrements(Book: any) {
-    this.item_qty = Book.quantity;
+    this.decrement();
+    this.item_qty = Book.quantityToBuy;
     if (this.item_qty > 0) {
       this.item_qty -= 1;
     }
     console.log('decreased book quantity', this.item_qty);
     this.updateCount(Book);
+
     this.snackbar.open('Book is decreased', '', {
       duration: 2000,
       verticalPosition: 'bottom',
@@ -91,16 +113,37 @@ export class QuickviewComponent implements OnInit {
   }
 
   updateCount(Book: any) {
-    this.item_qty = Book.quantity;
+    this.item_qty = Book.quantityToBuy;
     this.item_qty += 1;
     console.log('quantity of new', this.item_qty);
-    console.log('Quantity of exstings', Book.quantity);
+    console.log('Quantity of exstings', Book.quantityToBuy);
     console.log('Update book Api before Called');
+    console.log('bookid', Book._id);
+
     let reqData = {
-      quantity: this.item_qty,
+      quantityToBuy: 1,
     };
     this.cartService.quantity(Book._id, reqData).subscribe((response: any) => {
       console.log('UpdateBook API is called', response);
+    });
+  }
+
+  getAllFeedback() {
+    this.cartService.getFeedback(this.Book._id).subscribe((response: any) => {
+      console.log(response);
+      (this.feedbacks = response.result),
+        console.log('feedbacks', this.feedbacks);
+    });
+  }
+  addFeedback() {
+    let data = {
+      comment: this.comments,
+      rating: '2',
+      bookid: this.Book._id,
+    };
+    this.cartService.addFeedback(data).subscribe((response: any) => {
+      console.log('feedBack Added', response);
+      this.getAllFeedback();
     });
   }
 }

@@ -32,8 +32,8 @@
       <p style="margin-left: 10px" routerLink="/home/wishlist">Wishlist</p>
     </mat-menu>
 
-    <a routerLink="/home/cart">
-      <span class="material-symbols-outlined"> shopping_cart </span>
+    <a routerLink="/home/cart" >
+      <span [matBadge]="badgeItem" matBadgeColor="warn" class="material-symbols-outlined"> shopping_cart </span>
     </a>
   </div>
 </mat-toolbar>

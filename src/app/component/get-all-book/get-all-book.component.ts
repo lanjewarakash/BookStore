@@ -22,4 +22,19 @@ export class GetAllBookComponent implements OnInit {
       
     });
   }
+  highestPrice() {
+   this.bookArray= this.bookArray.sort((a: any, b: any) => b.price - a.price);
+    console.log('high to low', this.bookArray);
+  }
+
+  lowestPrice() {
+    console.log('hello');
+
+    this.bookArray= this.bookArray.sort((a: any, b: any) => a.discountPrice - b.discountPrice);
+    console.log('hello', this.bookArray);
+  }
+  newestArrival() {
+    this.bookArray= this.bookArray.reverse();
+    console.log('hello', this.bookArray);
+  }
 }

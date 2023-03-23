@@ -49,7 +49,7 @@ export class CartComponent implements OnInit {
 
     this.cartService.deleteOneBook(Book).subscribe((response: any) => {
       console.log('delete api is hiting', response);
-      location.reload();
+      this.getAllBook()
     });
     this.snackbar.open('Book Removed', '', {
       duration: 2000,
@@ -113,7 +113,6 @@ export class CartComponent implements OnInit {
     };
     this.cartService.quantity(Book._id, reqData).subscribe((res: any) => {
       console.log(res);
-      location.reload();
     });
   }
 }
