@@ -1,16 +1,16 @@
 .mainContainer {
-    width: 600px;
-    height: fit-content;
+  width: 1280px;
+  height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin-left: 300px;
+    background-color: rgb(74, 72, 72);
    
   }
   .containerOne {
-    margin-top: 110px;
-    width: 325px;
+    margin-top: 40px;
+    width: 300px;
     height: 360px;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@
     font-weight: 600;
   }
   .containerTwo {
-    margin-top: 110px;
+    margin-top: 40px;
     width: 300px;
     height: 400px;
     padding: 10px 30px 10px 30px;

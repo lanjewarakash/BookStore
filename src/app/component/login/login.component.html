@@ -1,33 +1,36 @@
 <form [formGroup]="login" (ngSubmit)="onlogin()">
   <div class="box">
+    
     <div class="container">
       <div>
         <img
-          src="../../../assets/book1.png"
-          alt=""
-          width="245px"
-          height="245px"
-          style="border-radius: 50%"
-        />
+          src="../../../assets/book1.png"/>
       </div>
       <div class="para">
-        <p style="margin-left: 25px">ONLINE BOOK SHOPPING</p>
+        <h3 id="content" >ONLINE BOOK SHOPPING</h3>
       </div>
     </div>
 
     <div class="container1">
+      <div>
+
+        <input type="radio" value="user" name="user" routerLink="/login">
+        <label for="user">User</label>
+        <input type="radio" value="user" name="user" routerLink="/adminlogin">
+        <label for="user">Adminlogin</label>
+      </div>
       <div style="display: flex; justify-content: space-around">
         <div>
           <a routerLink="/login"
-            ><h1 style="margin-top: 10px; font-weight: 500">LOGIN</h1></a
+            ><h2 style="font-weight: 500">LOGIN</h2></a
           >
         </div>
         <div>
           <a routerLink="/signin">
-            <h1 style="margin-top: 10px; font-weight: 500; color: grey">
+            <h2 style=" font-weight: 500; color: grey">
               SIGNUP
-            </h1></a
-          >
+            </h2></a
+          > 
         </div>
       </div>
       <div class="Input">
@@ -52,7 +55,7 @@
         <button mat-raised-button>Login</button>
       </div>
       <div>
-        <h3 style="text-align: center; line-height: 40px">
+        <h3 style="text-align: center">
           ----------------OR----------------
         </h3>
       </div>

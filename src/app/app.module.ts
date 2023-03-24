@@ -32,6 +32,7 @@ import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { FilterPipe } from './Service/FilterService/filter.pipe';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminsignupComponent } from './component/adminsignup/adminsignup.component';
+import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AdminsignupComponent } from './component/adminsignup/adminsignup.compon
     FilterPipe,
     AdminloginComponent,
     AdminsignupComponent,
+    AdmindashboardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {  Router } from '@angular/router';
 import { AdminService } from 'src/app/Service/AdminService/admin.service';
-import { UserService } from 'src/app/Service/UserService/user.service';
-
 @Component({
   selector: 'app-adminlogin',
   templateUrl: './adminlogin.component.html',
@@ -16,7 +15,8 @@ export class AdminloginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private adminService: AdminService,
-    private snackbar : MatSnackBar
+    private snackbar : MatSnackBar,
+    private router : Router
   ) {}
 
   ngOnInit() {
@@ -43,6 +43,7 @@ export class AdminloginComponent implements OnInit {
         verticalPosition : 'bottom'
       
       })
+      this.router.navigateByUrl('/admindashboard')
     }
   }
 }

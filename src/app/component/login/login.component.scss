@@ -1,44 +1,45 @@
-::ng-deep body {
-  background: gray;
-}
-
 .box {
-  background-color: gray;
-
+  width: 1280px;
+  height: 600px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(116, 116, 116);
 }
 .container {
   width: 300px;
   height: 360px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 110px;
-  margin-left: 10px;
+  margin-top: 40px;
   background: #f5f5f5 0% 0% no-repeat padding-box;
   border-bottom-left-radius: 21px;
   border-top-left-radius: 21px;
-  opacity: 1;
+
+}
+img {
+  border-radius: 50%;
+  height: 225px;
+  width: 225px;
 }
 .para {
-  width: 200px;
-  font-weight: 600;
+    margin-top: 20px;
+    font-weight: 600;
 }
 
 .container1 {
+  margin-top: 40px;
   width: 300px;
   height: 400px;
-  margin-top: 90px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 5px 15px #00000029;
   border: 1px solid #e4e4e4;
   border-radius: 6px;
   opacity: 1;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 10px 30px 10px 30px;
 }
 a {
   text-decoration: none;
@@ -75,6 +76,9 @@ a {
 
   outline: none;
   border: none;
+}
+#content{
+  font-weight: 600;
 }
 
 .Facebook {

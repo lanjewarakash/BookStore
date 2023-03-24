@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GetAllBookComponent } from './component/get-all-book/get-all-book.component';
 import { HomeComponent } from './component/home/home.component';
@@ -11,6 +11,7 @@ import { OrdersComponent } from './component/orders/orders.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminsignupComponent } from './component/adminsignup/adminsignup.component';
+import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,8 +19,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'adminlogin', component : AdminloginComponent},
   {path: 'adminsignup', component : AdminsignupComponent},
+  {path: 'admindashboard', component : AdmindashboardComponent},
 
   { path: 'quickview', component: QuickviewComponent },
+
 
   {
     path: 'home',

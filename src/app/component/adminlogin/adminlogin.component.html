@@ -1,12 +1,20 @@
 <form [formGroup]="login" (ngSubmit)="onlogin()">
 <div class="mainContainer">
   <div class="containerOne">
+ 
     <img src="../../../assets/book1.png" />
     <div class="content">
       <h3 id="content">ONLINE BOOK SHOPPING</h3>
     </div>
   </div>
   <div class="containerTwo">
+    <div>
+
+      <input type="radio" value="user" name="user" routerLink="/login">
+      <label for="user">User</label>
+      <input type="radio" value="user" name="user" routerLink="/adminlogin">
+      <label for="user">Adminlogin</label>
+    </div>
     <div style="display: flex; justify-content: space-around">
       <h2 routerLink="/adminlogin">LOGIN</h2>
       <h2 routerLink="/adminsignup">SIGNUP</h2>
@@ -26,7 +34,7 @@
     <div>
       <button id="loginButton" mat-flat-button color="primary">LOGIN</button>
     </div>
-    <h3 style="margin-left: 50px">------------ OR -------------</h3>
+    <h3 style="text-align: center">------------ OR -------------</h3>
 
     <div class="buttons">
       <div>
