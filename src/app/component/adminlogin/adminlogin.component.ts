@@ -37,6 +37,7 @@ export class AdminloginComponent implements OnInit {
       };
       this.adminService.login(data).subscribe((response: any) => {
         console.log('login is succesfully', response);
+        localStorage.setItem('Admintoken', response.result.accessToken)
       });
       this.snackbar.open('succesfully logined in', '' ,{
         duration:2000,

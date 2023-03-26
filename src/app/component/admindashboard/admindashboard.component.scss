@@ -1,44 +1,48 @@
-h1{
-    margin-left: 500px;
-    margin-top: 30px;
+h1 {
+  margin-left: 500px;
+  margin-top: 30px;
 }
-img{
-    padding: 10px;
-    width: 120px;
-    height: 120px;
+img {
+  padding: 10px;
+  width: 90px;
+  height: 100px;
 }
-table{
-    border: solid grey 1px;
-    margin-left: 180px;
-    border-collapse: collapse;
-    
+table {
+  border: solid grey 1px;
+  margin-left: 100px;
+  border-collapse: collapse;
 }
-tr{
-    border: solid grey 1px;
-   ;
+tr {
+  border: solid grey 1px;
 }
-th{
-    padding: 30px;
-    border: solid gray 1px;
+th {
+  padding: 30px;
+  border: solid gray 1px;
 }
-td{
-    padding: 10px;
-    border: solid gray 1px;
+td {
+  padding: 10px;
+  border: solid gray 1px;
 }
-button{
-    background-color: #a03037;
-    color: white;
-
+button {
+  background-color: #a03037;
+  color: white;
 }
-#home{
-    margin-left: 180px;
-    margin-top: 20px;
-    width: 100px;
+#home {
+  margin-left: 180px;
+  margin-top: 20px;
+  width: 100px;
 }
-#Logout{
-    float: right;
-    margin-right: 180px;
-    margin-top: 20px;
-    width: 100px;
+#Logout {
+  float: right;
+  margin-right: 180px;
+  margin-top: 20px;
+  width: 100px;
+}
+#addBook {
+  width: 150px;
+  padding: 10px;
+  margin-left: 100px;
+  font-size: medium;
+  margin-bottom: 10px;
 }
 

@@ -29,7 +29,5 @@ export class AdminService {
       })
     }
    return this.httpService.PostService('bookstore_user/admin/registration', data , false , httpOption)
-    
-
   }
 }

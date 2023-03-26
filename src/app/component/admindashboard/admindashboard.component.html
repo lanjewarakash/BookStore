@@ -1,37 +1,32 @@
 <app-home></app-home>
-<button  id='home' routerLink="/adminlogin">home</button>
-<button  id='Logout' >Logout</button>
-<h1>BOOKS DETAILS</h1>
-<table>
+
+<button id="home" routerLink="/adminlogin">home</button>
+<button id="Logout">Logout</button>
+
+<div>
+  <h1>BOOKS DETAILS</h1>
+  <button id="addBook" (click)=" openDialog()">AddBooks</button>
+  <table>
     <tr>
-        <th> Book</th>
-        <th>Book Name</th>
-        <th>Author</th>
-        <th>Price</th>
-        <th>Discount</th>
-        <th>Quantity</th>
-        <th>Update</th>
-        <th>Delete</th>
+      <th>Book</th>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>Discount</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
-    <tr>
-        <td><img src="../../../assets/Image 11@2x.png" alt=""></td>
-        <td>Malibu</td>
-        <td>Mabel</td>
-        <td>1000</td>
-        <td>699</td>
-        <td>5</td>
-        <td> <button>Update</button></td>
-        <td> <button>Delete</button></td>
+
+    <tr *ngFor="let admin of bookAdminArray">
+      <td><img src="../../../assets/Image 11@2x.png" alt="" /></td>
+      <td>{{ admin.bookName }}</td>
+      <td>{{ admin.author }}</td>
+      <td>{{ admin.discountPrice }}</td>
+      <td>{{ admin.price }}</td>
+      <td>{{ admin.quantity }}</td>
+      <td><button>Update</button></td>
+      <td><button (click)="deleteAdminBook(admin)">Delete</button></td>
     </tr>
-    <tr>
-        <td><img src="../../../assets/Image 11@2x.png" alt=""></td>
-        <td>Malibu</td>
-        <td>Mabel</td>
-        <td>1000</td>
-        <td>699</td>
-        <td>5</td>
-        <td> <button>Update</button></td>
-        <td> <button>Delete</button></td>
-    </tr>
-  
-</table>
+  </table>
+</div>

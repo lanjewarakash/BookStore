@@ -17,6 +17,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,6 +35,7 @@ import { FilterPipe } from './Service/FilterService/filter.pipe';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminsignupComponent } from './component/adminsignup/adminsignup.component';
 import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
+import { AdminaddbookComponent } from './component/adminaddbook/adminaddbook.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { AdmindashboardComponent } from './component/admindashboard/admindashboa
     AdminloginComponent,
     AdminsignupComponent,
     AdmindashboardComponent,
+    AdminaddbookComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ import { AdmindashboardComponent } from './component/admindashboard/admindashboa
     NgxPaginationModule,
     MatSelectModule,
     MatMenuModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule
 
   ],
   providers: [AuthguardService],

@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
 
-  private openbook = new BehaviorSubject([]);
+  private openbook = new BehaviorSubject(['All books']);
 
   getbookdetails=this.openbook.asObservable();
   
