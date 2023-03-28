@@ -21,3 +21,11 @@ button {
   background-color: #a03037;
   color: white;
 }
+
+@media screen and (max-width:600px) {
+  .container{
+    width: 100%;
+
+  }
+  
+}

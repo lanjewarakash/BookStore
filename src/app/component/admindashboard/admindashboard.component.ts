@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AdminbookService } from 'src/app/Service/AdminBookService/adminbook.service';
 import { AdminaddbookComponent } from '../adminaddbook/adminaddbook.component';
+import { AdminupdatebookComponent } from '../adminupdatebook/adminupdatebook.component';
 
 @Component({
   selector: 'app-admindashboard',
@@ -39,5 +40,10 @@ export class AdmindashboardComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(AdminaddbookComponent, {
     });
+}
+  openDialogs(admin:any): void {
+    const dialogRef = this.dialog.open(AdminupdatebookComponent, {
+      data:admin
+    }); 
 }
 }

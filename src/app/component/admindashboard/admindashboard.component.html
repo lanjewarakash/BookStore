@@ -1,8 +1,7 @@
 <app-home></app-home>
 
 <button id="home" routerLink="/adminlogin">home</button>
-<button id="Logout">Logout</button>
-
+<button routerLink="/adminlogin" id="Logout">Logout</button>
 <div>
   <h1>BOOKS DETAILS</h1>
   <button id="addBook" (click)=" openDialog()">AddBooks</button>
@@ -25,7 +24,7 @@
       <td>{{ admin.discountPrice }}</td>
       <td>{{ admin.price }}</td>
       <td>{{ admin.quantity }}</td>
-      <td><button>Update</button></td>
+      <td><button (click)=" openDialogs(admin)">Update</button></td>
       <td><button (click)="deleteAdminBook(admin)">Delete</button></td>
     </tr>
   </table>

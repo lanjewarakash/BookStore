@@ -43,4 +43,13 @@ export class AdminbookService {
     
     return this.httpService.DeleteService('bookstore_user/admin/delete/book/'+reqdata._id, true , httpOption)
   }
+  updateAdminBook(reqData:any){
+    let httpOption = {
+      headers : new HttpHeaders({
+        'Content-type' : 'application/json',
+        'x-access-token':this.token
+      })
+    }
+    return this.httpService.PutService('bookstore_user/admin/update/book/641961302dcecc000e1159d2',reqData, true , httpOption)
+  }
 }

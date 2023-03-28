@@ -1,0 +1,26 @@
+<div  class="box">
+    <div mat-dialog-content class="container" >
+        <h2>ADD BOOKS</h2>
+        <p>BookName</p>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="bookName">
+          </mat-form-field>
+          <p>Author</p>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="author" >
+          </mat-form-field>
+          <p>DiscountPrice</p>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="discountPrice">
+          </mat-form-field>
+          <p>Price</p>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="price">
+          </mat-form-field>
+          <p>Quantity</p>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="quantity" >
+          </mat-form-field>
+          <button id="submit" mat-dialog-close (click)="updateBook()">submit</button>
+    </div>
+</div>

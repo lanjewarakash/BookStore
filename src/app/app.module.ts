@@ -36,6 +36,7 @@ import { AdminloginComponent } from './component/adminlogin/adminlogin.component
 import { AdminsignupComponent } from './component/adminsignup/adminsignup.component';
 import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
 import { AdminaddbookComponent } from './component/adminaddbook/adminaddbook.component';
+import { AdminupdatebookComponent } from './component/adminupdatebook/adminupdatebook.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AdminaddbookComponent } from './component/adminaddbook/adminaddbook.com
     AdminsignupComponent,
     AdmindashboardComponent,
     AdminaddbookComponent,
+    AdminupdatebookComponent,
   ],
   imports: [
     BrowserModule,

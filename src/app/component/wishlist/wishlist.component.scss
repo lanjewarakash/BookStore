@@ -61,18 +61,24 @@ img {
   }
   .left {
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
   }
 
   img {
     width: 120px;
-    height: 150px;
+    height: 160px;
     margin-left: 8px;
   }
   .right {
     box-sizing: border-box;
 
     width: 100%;
+    margin-top: 0px;
+    height: 20px;
+    padding-top: 2px;
+  }
+  .removeBook{
+    margin-right: 0px;
   }
 }

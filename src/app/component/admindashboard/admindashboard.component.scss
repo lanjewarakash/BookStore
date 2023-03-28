@@ -33,7 +33,7 @@ button {
   width: 100px;
 }
 #Logout {
-  float: right;
+  // float: right;
   margin-right: 180px;
   margin-top: 20px;
   width: 100px;
@@ -46,3 +46,40 @@ button {
   margin-bottom: 10px;
 }
 
+@media screen and (max-width: 600px) {
+  table {
+    // background-color: lightgreen;
+    margin: 0%;
+    width: 100%;
+  }
+  #addBook {
+    margin: 0%;
+  }
+  h1 {
+    text-align: center;
+    width: 200px;
+    color: #a03037;
+    margin-left: 400px;
+  }
+  #home {
+    margin-left: 750px;
+    margin-top: 10px;
+    position: absolute;
+  }
+
+
+  ::ng-deep mat-toolbar-row,
+  .mat-toolbar-single-row {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 232%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  app-home{
+border: solid black 3px;
+  }
+}

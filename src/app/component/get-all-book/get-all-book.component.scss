@@ -1,7 +1,13 @@
-.sorting{
-    height: 5vh;
-    width: 13vw;
-    border: solid 1px black;
-    font-size: 15px;
-    float: right;
+.sorting {
+  height: 37px;
+  border: solid 1px black;
+  font-size: 15px;
+  float: right;
+  margin-right: 120px;
+}
+
+@media screen and (max-width: 600px) {
+  .sorting {
+    margin-right: 5px;
   }
+}
