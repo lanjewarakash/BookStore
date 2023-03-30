@@ -148,9 +148,9 @@ textarea {
   justify-content: end;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .MainContainer {
-    width: 98%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -165,10 +165,10 @@ textarea {
     height: 20%;
   }
   .containerTwo {
-    width: 85%;
+    width: 90%;
   }
   textarea {
-    width: 330px;
+    width: 100%;
   }
 
   .twoButton {
@@ -181,5 +181,107 @@ textarea {
   }
   #mainimage {
     margin-left: 60px;
+  }
+}
+@media (min-width:601px) and (max-width:1100px) {
+  .MainContainer {
+    width: 99%;
+  
+  }
+  .containerZero {
+    display: flex;
+    margin: 0%;
+
+    position: absolute;
+  }
+  .containerOne {
+    width: 20%;
+    height: 20%;
+  }
+  .containerTwo {
+    margin-left: 220px;
+  }
+  textarea {
+    width: 100%;
+  }
+
+  .twoButton {
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+    margin-left: 40px;
+  }
+  button {
+    margin-right: 0%;
+  }
+  #mainimage {
+    margin-left: 60px;
+  }
+}
+@media (min-width:601px) and (max-width:780px) {
+  .MainContainer {
+    width: 99%;
+  
+  }
+  .containerZero {
+    display: flex;
+    margin: 0%;
+
+    position: absolute;
+  }
+  .containerOne {
+    width: 20%;
+    height: 20%;
+  }
+  .containerTwo {
+    margin-left: 200px;
+  }
+  textarea {
+    width: 100%;
+  }
+
+  .twoButton {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+  }
+  button {
+    margin-right: 0%;
+  }
+  #mainimage {
+    margin-left: 60px;
+    width: 200px;
+  }
+
+}
+@media (min-width:420px) and (max-width:600px) {
+  .MainContainer {
+    width: 99%;
+  
+  }
+  .containerZero {
+    display: flex;
+    margin: 0%;
+
+    position: absolute;
+  }
+  .containerOne {
+    width: 20%;
+    height: 20%;
+  }
+ 
+  textarea {
+    width: 100%;
+  }
+
+  .twoButton {
+    display: flex;
+    justify-content: space-around;
+    width: 520px;
+  }
+ 
+  #mainimage {
+    margin-left: 60px;
+    width: 350px;
   }
 }

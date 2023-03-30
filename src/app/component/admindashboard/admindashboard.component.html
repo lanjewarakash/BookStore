@@ -1,7 +1,46 @@
-<app-home></app-home>
+<!-- 
+  <footer>
 
-<button id="home" routerLink="/adminlogin">home</button>
-<button routerLink="/adminlogin" id="Logout">Logout</button>
+    <img id="logoimage" src="../../../assets/book2.png" alt="" />
+    <span id="logoname" >BookStore</span>
+<input type="text" id="search" placeholder="search"/>
+ <button> <span class="material-symbols-outlined" id="person">  person </span></button>
+  </footer> -->
+
+  <p>
+    <mat-toolbar >
+        <img id="logoimage" src="../../../assets/book2.png" alt="" />
+      <span id="logoname" >BookStore</span>
+      <input type="text" id="search" placeholder="search"/>
+      <span class="example-spacer"></span>
+       <button class="pButton"  (click)="logout()"><span class="material-symbols-outlined" id="person" >  person </span> </button> 
+    </mat-toolbar>
+  </p>
+
+    <!-- <div id="person">
+      <button [matMenuTriggerFor]="menu">
+      </button>
+      <mat-menu #menu="matMenu">
+        <h1>Welcome</h1>
+        <h5>To acsess account and manage orders</h5>
+        <button
+          style="
+            border: solid brown 2px;
+            width: 100px;
+            display: flex;
+            margin-left: 10px;
+            background-color: white;
+          "
+          
+          mat-menu-item
+        >
+          LOGOUT
+        </button>
+        <p style="margin-left: 10px">My Orders</p>
+        <p style="margin-left: 10px" routerLink="/home/wishlist">Wishlist</p>
+      </mat-menu>
+      </div>  -->
+
 <div>
   <h1>BOOKS DETAILS</h1>
   <button id="addBook" (click)=" openDialog()">AddBooks</button>
@@ -18,7 +57,7 @@
     </tr>
 
     <tr *ngFor="let admin of bookAdminArray">
-      <td><img src="../../../assets/Image 11@2x.png" alt="" /></td>
+      <td><img id="bookImg" src="../../../assets/Image 11@2x.png" alt="" /></td>
       <td>{{ admin.bookName }}</td>
       <td>{{ admin.author }}</td>
       <td>{{ admin.discountPrice }}</td>
@@ -29,3 +68,7 @@
     </tr>
   </table>
 </div>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>

@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { AdminbookService } from 'src/app/Service/AdminBookService/adminbook.service';
 import { AdminaddbookComponent } from '../adminaddbook/adminaddbook.component';
 import { AdminupdatebookComponent } from '../adminupdatebook/adminupdatebook.component';
@@ -13,8 +14,8 @@ export class AdmindashboardComponent {
   bookAdminArray: any;
 
   constructor(
-    private adminBookService: AdminbookService , public dialog: MatDialog)
-     {localStorage.getItem('token');}
+    private adminBookService: AdminbookService , public dialog: MatDialog , private router :Router)
+     {localStorage.getItem('Admintoken');}
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -45,5 +46,9 @@ export class AdmindashboardComponent {
     const dialogRef = this.dialog.open(AdminupdatebookComponent, {
       data:admin
     }); 
+}
+logout(){
+  localStorage.removeItem('Admintoken')
+  this.router.navigateByUrl('/adminlogin')
 }
 }
